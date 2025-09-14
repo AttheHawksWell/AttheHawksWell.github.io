@@ -1,0 +1,22 @@
+/* 覆盖 Butterfly 列表卡片简介的常见结构 */
+.index .recent-post-item .content .excerpt,
+.index .recent-post-item .article-content .content .excerpt,
+.index .recent-post-item .post-meta__description,
+.post-excerpt, .post-abstract, .post-description {
+  /* 解除所有截断/省略/高度限制 */
+  overflow: visible !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  max-height: none !important;
+  height: auto !important;
+  white-space: normal !important;
+}
+
+/* 有些主题会把简介放在 p 里再做 line-clamp，顺带把子元素也解掉 */
+.index .recent-post-item .content .excerpt *,
+.index .recent-post-item .post-meta__description * {
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  white-space: normal !important;
+}
